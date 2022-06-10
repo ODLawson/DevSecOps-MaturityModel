@@ -65,7 +65,7 @@ function printDetail($dimension, $subdimension, $activityName, $dimensions, $rep
   if ($actionItemsContent == "") {
     $actionItemsContent = "TODO";
   }
-  if (IS_SHOW_EVIDENCE_actionItems || $actionItemsContent != "TODO")
+  if (IS_SHOW_EVIDENCE_TODO || $actionItemsContent != "TODO")
     echo "<h" .($headerWeight + 2) . ">" . "Action Items" . "</h" .($headerWeight + 2) . ">"  . $actionItemsContent;
 
   $evidenceContent = getElementContentAndCheckExistence($element, "evidence", true);
