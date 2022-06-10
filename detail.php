@@ -60,6 +60,14 @@ function printDetail($dimension, $subdimension, $activityName, $dimensions, $rep
 
   echo "<h$headerWeight>$pageH1</h$headerWeight>";
   echo build_table_tooltip($element, $headerWeight + 1);
+
+  $actionItemsContent = getElementContentAndCheckExistence($element, "action", true);
+  if ($actionItemsContent == "") {
+    $actionItemsContent = "TODO";
+  }
+  if (IS_SHOW_EVIDENCE_actionItems || $actionItemsContent != "TODO")
+    echo "<h" .($headerWeight + 2) . ">" . "Action Items" . "</h" .($headerWeight + 2) . ">"  . $actionItemsContent;
+
   $evidenceContent = getElementContentAndCheckExistence($element, "evidence", true);
   if ($evidenceContent == "") {
     $evidenceContent = "TODO";
